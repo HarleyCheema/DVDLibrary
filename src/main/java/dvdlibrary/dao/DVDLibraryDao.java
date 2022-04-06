@@ -1,15 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
-package dvdlibrary.dao;
+package DVDLibrary.dao;
 
 import java.util.List;
+
 import DVDLibrary.dto.DVD;
-/**
- *
- * @author harle
- */
+
+
 //Dejan Savic
 public interface DVDLibraryDao {
     /**
@@ -23,14 +18,14 @@ public interface DVDLibraryDao {
      * @return the DVD object previously associated with the given  
      * DVD title if it exists, null otherwise
      */
-    DVD addDVD(String title, DVD dvd);
+    DVD addDVD(String title, DVD dvd) throws DVDLibraryDaoException;
 
     /**
      * Returns a List of all DVDs in the library.
      *
      * @return List containing all dvds in the library.
      */
-    List<DVD> getAllDVDs();
+    List<DVD> getAllDVDs() throws DVDLibraryDaoException;
 
     /**
      * Returns the DVD object associated with the given DVD title.
@@ -40,7 +35,7 @@ public interface DVDLibraryDao {
      * @return the DVD object associated with the given DVD title,  
      * null if no such DVD exists
      */
-    DVD getDVD(String title);
+    DVD getDVD(String title) throws DVDLibraryDaoException;
 
     /**
      * Removes from the library the DVD associated with the given title.
@@ -51,6 +46,7 @@ public interface DVDLibraryDao {
      * @return DVD object that was removed or null if DVD
      * was associated with the given student title
      */
-    DVD removeDVD(String title);
+    DVD removeDVD(String title) throws DVDLibraryDaoException;
+    
+    
 }
-
