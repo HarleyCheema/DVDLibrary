@@ -4,10 +4,38 @@
  */
 package dvdlibrary.dao;
 
-/**
- *
- * @author harle
- */
-public class DVDLibraryDaoFileImpl {
-    
+
+import java.util.List;
+
+import DVDLibrary.dto.DVD;
+
+//Dejan Savic
+public class DVDLibraryDaoFileImpl implements DVDLibraryDao{
+
+	@Override
+	public DVD addDVD(String title, DVD dvd) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public List<DVD> getAllDVDs() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public DVD getDVD(String title) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public DVD removeDVD(String title) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+
+
 }
