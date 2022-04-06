@@ -124,7 +124,7 @@ public class DVDLibraryController {
     private void removeDVD() throws DVDLibraryDaoException {
         view.displayRemoveDVDBanner();
         String dvdTitle = view.getDVDIdChoice();
-        DVD removedDvd = dao.getDVD(dvdTitle);
+        DVD removedDvd = dao.removeDVD(dvdTitle);
         view.displayRemoveResult(removedDvd);
     }
 
