@@ -4,10 +4,43 @@
  */
 package dvdlibrary.dao;
 
-/**
- *
- * @author harle
- */
-public class DVDLibraryDaoFileImpl {
-    
+
+
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import DVDLibrary.dto.DVD;
+
+//Dejan Savic
+public class DVDLibraryDaoFileImpl implements DVDLibraryDao{
+	//list
+	private Map<String, DVD> dvds = new HashMap<>();
+	@Override
+	public DVD addDVD(String title, DVD dvd) {
+		DVD prevDVD = dvds.put(title, dvd);
+		return prevDVD;
+	}
+
+	@Override
+	public List<DVD> getAllDVDs() {
+		return new ArrayList<DVD>(dvds.values());
+	}
+
+	@Override
+	public DVD getDVD(String title) {
+		return dvds.get(title);
+	}
+
+	@Override
+	public DVD removeDVD(String title) {
+		DVD removedDVD = dvds.remove(title);
+		return removedDVD;
+	}
+
+
+
 }
