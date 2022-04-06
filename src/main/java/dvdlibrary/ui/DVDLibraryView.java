@@ -25,9 +25,10 @@ public class DVDLibraryView {
         io.print("2. Add DVD to the collection");
         io.print("3. View information for a DVD");
         io.print("4. Remove a DVD from the collection");
-        io.print("5. Exit");
+        io.print("5. Edit the information for a DVD in the the collection");
+        io.print("6. Exit");
 
-        return io.readInt("Please select from the above choices.", 1, 5);
+        return io.readInt("Please select from the above choices.", 1, 6);
     }
 
     public DVD getNewDVDInfo() {
