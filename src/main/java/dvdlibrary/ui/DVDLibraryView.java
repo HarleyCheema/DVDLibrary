@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * This is the view class that the user will interact with. It contains the console outputs, 
+ * as well as the methods for various conditions.
  */
 package dvdlibrary.ui;
 
@@ -12,13 +12,14 @@ import dvdlibrary.dto.DVD;
  * @author harle
  */
 public class DVDLibraryView {
-
+    //Create instance io for the class UserIO, to use the UserIO methods.
     private UserIO io;
 
     public DVDLibraryView(UserIO io) {
         this.io = io;
     }
 
+    //Method for printing menu and returning an integer. 
     public int printMenuAndGetSelection() {
         io.print("Main Menu");
         io.print("1. List DVDs");
@@ -31,6 +32,7 @@ public class DVDLibraryView {
         return io.readInt("Please select from the above choices.", 1, 6);
     }
 
+    //Method for creating an instance of class DVD, prompting for and setting the properties, then returning the object.
     public DVD getNewDVDInfo() {
         String title = io.readString("Please enter DVD Title");
         String releaseDate = io.readString("Please enter the release date");
@@ -47,6 +49,7 @@ public class DVDLibraryView {
         return currentDVD;
     }
 
+    //Below are all methods for displaying a string for the solicited information.
     public void displayCreateDVDBanner() {
         io.print("=== Create DVD ===");
     }
