@@ -123,6 +123,12 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 	        // get the next line in the file
 	        currentLine = scanner.nextLine();
 	        // unmarshall the line into a DVD
+		    
+		//If currentline is empty, skip reading out dvd    
+		if(currentLine.isEmpty()){
+                break;
+            	}    
+		    
 	        currentDVD = unmarshallDVD(currentLine);
 
 	        // We are going to use the DVD title as the map key for our DVD object.
