@@ -4,36 +4,41 @@
  */
 package dvdlibrary.dao;
 
-
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import DVDLibrary.dto.DVD;
 
 //Dejan Savic
 public class DVDLibraryDaoFileImpl implements DVDLibraryDao{
-
+	//hashmap
+	private Map<String, DVD> dvds = new HashMap<>();
 	@Override
 	public DVD addDVD(String title, DVD dvd) {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not supported yet.");
+		DVD prevDVD = dvds.put(title, dvd);
+		return prevDVD;
 	}
 
 	@Override
 	public List<DVD> getAllDVDs() {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not supported yet.");
+		return new ArrayList<DVD>(dvds.values());
 	}
 
 	@Override
 	public DVD getDVD(String title) {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not supported yet.");
+		return dvds.get(title);
 	}
 
 	@Override
 	public DVD removeDVD(String title) {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not supported yet.");
+		DVD removedDVD = dvds.remove(title);
+		return removedDVD;
 	}
 
 
