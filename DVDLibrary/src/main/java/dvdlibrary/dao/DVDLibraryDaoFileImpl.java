@@ -19,36 +19,40 @@ import dvdlibrary.dto.DVD;
 
 //Dejan Savic
 public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
-	//list
+	//Text File Name
 	public static final String LIBRARY_FILE = "library.txt";
+	//Delimiter in TXT file
 	public static final String DELIMITER = "::";
+	//list
 	private Map<String, DVD> dvds = new HashMap<>();
 	@Override
+	
+	//add a new dvd
 	public DVD addDVD(String title, DVD dvd) throws DVDLibraryDaoException {
-		loadDVDs();
-		DVD prevDVD = dvds.put(title, dvd);
-		writeLibrary();
+		loadDVDs(); //load txt file
+		DVD prevDVD = dvds.put(title, dvd); //update list with new DVD
+		writeLibrary(); //Write new DVD to txt file
 		return prevDVD;
 	}
 	
 
 	@Override
 	public List<DVD> getAllDVDs() throws DVDLibraryDaoException {
-		loadDVDs();
-		return new ArrayList<DVD>(dvds.values());
+		loadDVDs(); //load txt file
+		return new ArrayList<DVD>(dvds.values()); //return All DVDs
 	}
 
 	@Override
 	public DVD getDVD(String title) throws DVDLibraryDaoException{
-		loadDVDs();
-		return dvds.get(title);
+		loadDVDs(); //load txt file
+		return dvds.get(title); //return matching dvd title and info
 	}
 
 	@Override
 	public DVD removeDVD(String title) throws DVDLibraryDaoException{
-		loadDVDs();
-		DVD removedDVD = dvds.remove(title);
-		writeLibrary();
+		loadDVDs(); //load txt file
+		DVD removedDVD = dvds.remove(title); //remove specific dvd from list
+		writeLibrary(); //update txt file to remove dvd
 		return removedDVD;
 	}
 	
@@ -63,9 +67,9 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 	    // Leaving us with an array of Strings, stored in DVD Tokens.
 	    // Which should look like this:
 	    // ______________________________________________________
-	    // |     |rel.|       |        |      |    				|
+	    // |     |rel.|       |        |      |    		    |
 	    // |Title|date|rating |director|studio|user rating/note |
-	    // |     |    |       |        |      |    				|
+	    // |     |    |       |        |      |    		    |
 	    // -----------------------------------------------------
 	    //  [0]  [1]    [2]       [3]    [4]     [5]
 	    String[] DVDTokens = DVDAsText.split(DELIMITER);
