@@ -47,7 +47,7 @@ public class DVDLibraryController {
                         removeDVD();
                         break;
                     case 5:
-                        //editDVD();
+                        editDVD();
                         break;
                     case 6:
                         keepGoing = false;
@@ -71,6 +71,13 @@ public class DVDLibraryController {
         DVD newDvd = view.getNewDVDInfo();
         dao.addDVD(newDvd.getTitle(), newDvd);
         view.displayCreateSuccessBanner();
+    }
+    
+    private void editDVD() throws DVDLibraryDaoException {
+        view.displayEditDVDBanner();
+        DVD newDVD = view.getNewDVDInfo();
+        dao.addDVD(newDVD.getTite(), newDvd);
+        view.displayEditSuccessBanner();
     }
     
     private void listDVDs()throws DVDLibraryDaoException{
