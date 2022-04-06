@@ -56,6 +56,11 @@ public class DVDLibraryView {
                 "DVD successfully created.  Please hit enter to continue");
     }
 
+    public void displayEditSuccessBanner() {
+        io.readString(
+                "DVD successfully edited.  Please hit enter to continue");
+    }
+    
     public void displayDVDList(List<DVD> dvdList) {
         for (DVD currentDVD : dvdList) {
             String dvdInfo = String.format("#%s : %s %s %s %s %s",
@@ -110,6 +115,10 @@ public class DVDLibraryView {
         io.readString("Please hit enter to continue.");
     }
 
+    public void displayEditDVDBanner() {
+        io.print("=== Edit DVD ===");
+    }
+    
     public void displayExitBanner() {
         io.print("Good Bye!!!");
     }
