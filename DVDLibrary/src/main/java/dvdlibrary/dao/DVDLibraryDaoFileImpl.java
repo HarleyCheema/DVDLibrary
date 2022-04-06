@@ -133,8 +133,6 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 	    // For example, we need an in memory object to end up like this:
 	    // title::release date::rating::director name::studio::User rating or note
 
-	    // It's not a complicated process. Just get out each property,
-	    // and concatenate with our DELIMITER as a kind of spacer. 
 
 	    // Start with the DVD title, since that's supposed to be first.
 	    String DVDAsText = aDVD.getTitle() + DELIMITER;
@@ -165,10 +163,7 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 	 * @throws ClassRosterDaoException if an error occurs writing to the file
 	 */
 	private void writeLibrary() throws DVDLibraryDaoException {
-	    // NOTE FOR APPRENTICES: We are not handling the IOException - but
-	    // we are translating it to an application specific exception and 
-	    // then simple throwing it (i.e. 'reporting' it) to the code that
-	    // called us.  It is the responsibility of the calling code to 
+	    
 	    // handle any errors that occur.
 	    PrintWriter out;
 
@@ -180,7 +175,7 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 	    }
 
 	    // Write out the DVD objects to the Library file.
-	    // NOTE TO THE APPRENTICES: We could just grab the DVD map,
+	    
 	    // get the Collection of DVD and iterate over them but we've
 	    // already created a method that gets a List of DVDs so
 	    // we'll reuse it.
