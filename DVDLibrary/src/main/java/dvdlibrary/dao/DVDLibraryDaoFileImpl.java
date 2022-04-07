@@ -78,7 +78,7 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 	    String DVDTitle = DVDTokens[0];
 
 	    // Which we can then use to create a new DVD object to satisfy
-	    // the requirements of the Student constructor.
+	    // the requirements of the DVD constructor.
 	    DVD DVDFromFile = new DVD(DVDTitle);
 
 	    // However, there are 4 remaining tokens that need to be set into the
